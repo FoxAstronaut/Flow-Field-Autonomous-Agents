@@ -12,22 +12,15 @@ void setup(){
 void draw(){
   background(0);
   
-  //f.show();
-  
   for(int i = vehicles.size()-1; i > 0; i--){
     Vehicle v = vehicles.get(i);
     v.follow(f);
     v.update();
     v.show();
   }
-  
-  println(vehicles.size());
-  
-  if(vehicles.size() > VEHICHLE_LIMIT){
-    println("LIMIT REACHED");
-    while(vehicles.size() > VEHICHLE_LIMIT){
-      vehicles.remove(0);
-    }
+
+  while(vehicles.size() > VEHICHLE_LIMIT){
+    vehicles.remove(0);
   }
 }
 
