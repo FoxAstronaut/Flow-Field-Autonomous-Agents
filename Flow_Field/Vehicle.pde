@@ -6,6 +6,7 @@ class Vehicle{
   float r;
   float maxSpeed;
   float maxForce;
+  color col;
   
   Vehicle(float x,float y){
     position = new PVector(x,y);;
@@ -14,12 +15,14 @@ class Vehicle{
     r = 3.0;
     maxSpeed = 10;
     maxForce = 0.2;
+    colorMode(HSB,360,100,100);
+    col = color(random(360),100,100);
   }
   
   void show(){
     float theta = velocity.heading() + PI/2;
-    fill(255);
-    stroke(0);
+    fill(col);
+    noStroke();
     pushMatrix();
     translate(position.x,position.y);
     rotate(theta);

@@ -4,7 +4,7 @@ FlowField f;
 int VEHICHLE_LIMIT = 400;
 
 void setup(){
-  size(800,600);
+  fullScreen();
   vehicles = new ArrayList<Vehicle>();
   f = new FlowField(20);
 }
